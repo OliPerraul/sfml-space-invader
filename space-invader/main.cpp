@@ -9,10 +9,26 @@
 #include "utils.h"
 #include "main.h"
 
+
+
 int main()
 {
+	Game game;
+	return game.run();
+}
+
+Game* Game::_instance = nullptr;
+
+Game::Game()
+{
+	_instance = this;
+}
+
+int Game::run()
+{
+
 	// Create the main window
-	sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "SFML window");
+	sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), "SPACE INVADER");
 	window.setFramerateLimit(60);
 
 	sf::Font font;
@@ -21,7 +37,8 @@ int main()
 
 	sf::Clock clock;
 
-	sf::Text text("Space Invader", font, 16);
+	sf::Text titleText("Space Invader", font, 16);
+	sf::Text gameOverText("GAME OVER", font, 32);
 
 	Level level;
 
@@ -43,10 +60,17 @@ int main()
 
 		// Clear screen
 		window.clear();
+		window.draw(titleText);
+		gameOverText.setPosition(
+			sf::Vector2f(SCREEN_WIDTH, SCREEN_HEIGHT) / 2.0f -
+			sf::Vector2f(gameOverText.getLocalBounds().width, 0) / 2.0f);
 
-		window.draw(text);
+		if (isGameOver)
+		{
+			window.draw(gameOverText);
+		}
+
 		level.draw(window);
-
 		window.display();
 	}
 	return EXIT_SUCCESS;

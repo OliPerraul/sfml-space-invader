@@ -121,15 +121,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="barrier.h" />
+    <ClInclude Include="invader.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="objects.h" />
+    <ClInclude Include="object.h" />
     <ClInclude Include="level.h" />
+    <ClInclude Include="player.h" />
+    <ClInclude Include="sprite.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="objects.cpp" />
+    <ClCompile Include="barrier.cpp" />
+    <ClCompile Include="invader.cpp" />
+    <ClCompile Include="object.cpp" />
     <ClCompile Include="level.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="player.cpp" />
+    <ClCompile Include="sprite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

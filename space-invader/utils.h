@@ -27,7 +27,7 @@ inline bool isRightPressed() {
 
 inline bool isShootPressed(sf::Event event)
 {
-	if (event.type == sf::Event::EventType::KeyPressed)
+	if (event.type == sf::Event::EventType::KeyReleased)
 	{
 		if (event.key.code == sf::Keyboard::Space || event.key.code == sf::Keyboard::Enter)
 			return true;
