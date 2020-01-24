@@ -1,4 +1,4 @@
-# IMN501-tp1
+# SPACE INVADER
 
 ----
 ![Test Image 3](/space_invader.PNG)
